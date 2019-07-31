@@ -2,7 +2,7 @@ FROM node:10
 
 WORKDIR /appFront
 
-COPY ./TeamYellowPokedex/* .
+COPY ./AngularUI/* .
 
 RUN npm install
 
