@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from 'src/app/services/pokemon.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  searchForm = new FormGroup({
+    name: new FormControl('')
+  });
+
+  constructor(private pokeService: PokemonService) { }
 
   ngOnInit() {
   }
 
+  findPokemon() {
+    let pokemon = this.searchForm.value.name;
+    console.log(pokemon);
+    this.pokeService.getOnePokemon(pokemon).subscribe((x) =>{
+      console.log(x);
+    });
+  }
 }

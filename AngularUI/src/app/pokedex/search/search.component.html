@@ -1,1 +1,6 @@
-<p>search works!</p>
+<div align="center">
+    <form [formGroup]="searchForm">
+        <input type="text" placeholder="Pokemon Name" formControlName="name">
+        <button (click) = "findPokemon();">search</button>
+    </form>
+</div>
