@@ -19,7 +19,8 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  pokemon: PokemonInterface[];
+  pokemon: PokemonInterface;
+  allPokemon: PokemonInterface[];
   pokemonObject: PokemonInterface;
   pokemonKeys: string[];
 
@@ -28,6 +29,8 @@ export class SearchComponent implements OnInit {
     console.log(pokemon);
     this.pokeService.getOnePokemon(pokemon).subscribe((x) =>{
       console.log(x);
+      this.pokemon = x;
+      console.log(this.pokemon.types.type);
     });
   }
 }

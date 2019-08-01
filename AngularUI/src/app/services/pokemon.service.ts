@@ -14,4 +14,8 @@ export class PokemonService {
     return this.req.get<PokemonInterface>(this.req.url + '/pokemon/' + name);
   }
 
+  getAllPokemon(): Observable<PokemonInterface> { 
+    return this.req.get<PokemonInterface>(this.req.url + '/pokemon?offset=0&limit=964');
+  } 
+
 }
