@@ -1,6 +1,6 @@
 FROM node:10 
 
-WORKDIR /appFront
+WORKDIR /appFront/
 
 COPY ./AngularUI/* .
 

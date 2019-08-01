@@ -28,7 +28,13 @@ pipeline {
   				steps{
   					script {
         				app.inside {
-            				sh 'echo "Tests passed"'
+							def nodeVersion = sh 'node -v'
+							def npmVersion = sh 'npm -v'
+							if(nodeVersion == "v12.7.0" && npmVersion = "6.10.0"){
+								sh 'echo "Test Passed"'
+							} else {
+            					sh 'echo "Test Failed"'
+							}
         				}
       				}
     			}
