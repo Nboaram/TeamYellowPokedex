@@ -4,12 +4,12 @@
     
     <form [formGroup]="searchForm">
         <input type="text" placeholder="Pokemon Name" formControlName="name">
-        <button (click) = "findPokemon();">search</button>
+        <button (click)="findPokemon();">search</button>
     </form>
     </div>
-    <div class="bg-color"  *ngIf="pokemon"> 
-     
-
+</div>
+    </div>
+    <div class="bg-color"  *ngIf="pokemon">
         <table class="table col-md-6 display-table ">
                 <thead>
                   <tr>
@@ -35,7 +35,59 @@
                   </tr>
                   </tbody>
                   </table>
-
-                  </div>
+           </div>
     </div>
-
+        <table>
+            <tr>
+                <td colspan ="2">
+                <img src="{{pokemon.sprites.front_default}}" width="250" height="250">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 align="left">Speed: </h4>
+                </td>
+                <td>
+                <h4>{{pokemon.stats[0].base_stat}}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <h4>Special Defense: </h4>
+                </td>
+                <td>
+                <h4>{{pokemon.stats[1].base_stat}}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <h4>Special Attack: </h4>
+                </td>
+                <td>
+                <h4>{{pokemon.stats[2].base_stat}}</h4>
+                </td>
+            <tr>
+                <td>
+                <h4>Defense: </h4>
+                </td>
+                <td>
+                <h4> {{pokemon.stats[3].base_stat}}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <h4>Attack: </h4>
+                </td>
+                <td>
+                <h4>{{pokemon.stats[4].base_stat}}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <h4>Hit Points: </h4>
+                </td>
+                <td>
+                <h4> {{pokemon.stats[5].base_stat}}</h4>
+                </td>
+            </tr>
+        </table>

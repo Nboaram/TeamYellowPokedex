@@ -1,4 +1,6 @@
 import { TypesInterface } from 'src/app/interfaces/types-interface';
+import { SpritesInterface } from './sprites-interface';
+import { StatsInterface } from './stats-interface';
 
 export interface PokemonInterface {
     name: string,
@@ -6,10 +8,14 @@ export interface PokemonInterface {
     weight: number,
     is_default: boolean,
     base_experience: number,
-    types: TypesInterface
+    types: TypesInterface,
+    sprites: SpritesInterface,
+    stats: StatsInterface
 }
 
 export class Pokemon implements PokemonInterface {
+    stats: StatsInterface;
+    sprites: SpritesInterface;
     types: TypesInterface;
     name: string;
     height: number;
