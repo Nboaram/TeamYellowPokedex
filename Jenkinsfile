@@ -36,8 +36,8 @@ pipeline {
   					script {
         					app.inside {
 								def nodeVersion = sh 'node -v'
-								def npmVersion = sh 'npm -v'
-								if(nodeVersion == "v12.7.0" && npmVersion = "6.10.0"){
+								def angularVersion = sh 'angular -v'
+								if(nodeVersion == "v12.7.0" && angularVersion = "8.2.0"){
 								sh 'echo "Test Passed"'
 							} else {
             							sh 'echo "Test Failed"'
