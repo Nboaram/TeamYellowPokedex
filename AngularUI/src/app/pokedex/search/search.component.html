@@ -1,93 +1,91 @@
 <div align="center">
     <div class="topHeader">
         <p>View statistics and build you team!</p>
-    
-    <form [formGroup]="searchForm">
-        <input type="text" placeholder="Pokemon Name" formControlName="name">
-        <button (click)="findPokemon();">search</button>
-    </form>
+
+        <form [formGroup]="searchForm">
+            <input type="text" placeholder="Pokemon Name" formControlName="name">
+            <button (click)="findPokemon();">search</button>
+        </form>
     </div>
 </div>
-    </div>
-    <div class="bg-color"  *ngIf="pokemon">
-        <table class="table col-md-6 display-table ">
-                <thead>
-                  <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Height</th>
-                    <th scope="col">Weight</th>
-                    <th scope="col">Default</th>
-                    <th scope="col">Base Experience</th>
-                    <th scope="col">Types</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">{{pokemon.name}}</th>
-                    <td>{{pokemon.height}}</td>
-                    <td>{{pokemon.weight}}</td>
-                    <td>{{pokemon.is_default}}</td>
-                    <td>{{pokemon.base_experience}}</td>
-                    
-                    <td *ngIf = "pokemon.types[1]">{{pokemon.types[0].type.name}} , {{pokemon.types[1].type.name}} </td> 
-                    <td *ngIf = "!pokemon.types[1]"> {{pokemon.types[0].type.name}}</td>
+<div class="bg-color" *ngIf="pokemon">
+    <table class="table col-md-6 display-table ">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Height</th>
+                <th scope="col">Weight</th>
+                <th scope="col">Default</th>
+                <th scope="col">Base XP</th>
+                <th scope="col">Types</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{pokemon.name}}</th>
+                <td>{{pokemon.height}}</td>
+                <td>{{pokemon.weight}}</td>
+                <td>{{pokemon.is_default}}</td>
+                <td>{{pokemon.base_experience}}</td>
 
-                  </tr>
-                  </tbody>
-                  </table>
-           </div>
-    </div>
-        <table>
-            <tr>
-                <td colspan ="2">
-                <img src="{{pokemon.sprites.front_default}}" width="250" height="250">
-                </td>
+                <td *ngIf="pokemon.types[1]">{{pokemon.types[0].type.name}} , {{pokemon.types[1].type.name}} </td>
+                <td *ngIf="!pokemon.types[1]"> {{pokemon.types[0].type.name}}</td>
+
             </tr>
-            <tr>
-                <td>
-                    <h4 align="left">Speed: </h4>
-                </td>
-                <td>
-                <h4>{{pokemon.stats[0].base_stat}}</h4>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <h4>Special Defense: </h4>
-                </td>
-                <td>
-                <h4>{{pokemon.stats[1].base_stat}}</h4>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <h4>Special Attack: </h4>
-                </td>
-                <td>
-                <h4>{{pokemon.stats[2].base_stat}}</h4>
-                </td>
-            <tr>
-                <td>
-                <h4>Defense: </h4>
-                </td>
-                <td>
-                <h4> {{pokemon.stats[3].base_stat}}</h4>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <h4>Attack: </h4>
-                </td>
-                <td>
-                <h4>{{pokemon.stats[4].base_stat}}</h4>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <h4>Hit Points: </h4>
-                </td>
-                <td>
-                <h4> {{pokemon.stats[5].base_stat}}</h4>
-                </td>
-            </tr>
-        </table>
+        </tbody>
+    </table>
+</div>
+<table *ngIf="pokemon">
+    <tr>
+        <td colspan="2" align="center">
+            <img src="{{pokemon.sprites.front_default}}" width="175" height="175" >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4 align="left">Speed: </h4>
+        </td>
+        <td>
+            <h4>{{pokemon.stats[0].base_stat}}</h4>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4>Special Defense: </h4>
+        </td>
+        <td>
+            <h4>{{pokemon.stats[1].base_stat}}</h4>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4>Special Attack: </h4>
+        </td>
+        <td>
+            <h4>{{pokemon.stats[2].base_stat}}</h4>
+        </td>
+    <tr>
+        <td>
+            <h4>Defense: </h4>
+        </td>
+        <td>
+            <h4> {{pokemon.stats[3].base_stat}}</h4>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4>Attack: </h4>
+        </td>
+        <td>
+            <h4>{{pokemon.stats[4].base_stat}}</h4>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4>Hit Points: </h4>
+        </td>
+        <td>
+            <h4> {{pokemon.stats[5].base_stat}}</h4>
+        </td>
+    </tr>
+</table>

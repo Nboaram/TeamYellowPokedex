@@ -6,7 +6,7 @@ export interface PokemonInterface {
     name: string,
     height: number,
     weight: number,
-    is_default: boolean,
+    is_default: string,
     base_experience: number,
     types: TypesInterface,
     sprites: SpritesInterface,
@@ -20,6 +20,6 @@ export class Pokemon implements PokemonInterface {
     name: string;
     height: number;
     weight: number;
-    is_default: boolean;
+    is_default: string;
     base_experience: number;
 }
