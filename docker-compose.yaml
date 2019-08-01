@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+        frontend:
+                image: teamyellow/frontend:latest
+                ports:
+                        - target: 8080
+                          published: 8080
