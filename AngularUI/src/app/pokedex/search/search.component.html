@@ -1,17 +1,42 @@
 <div align="center">
+    <div class="topHeader">
+        <p>View statistics and build you team!</p>
+    
     <form [formGroup]="searchForm">
         <input type="text" placeholder="Pokemon Name" formControlName="name">
         <button (click)="findPokemon();">search</button>
     </form>
-    <div *ngIf="pokemon">
-        <h2>{{pokemon.name}}</h2>
-        <h4>Height: {{pokemon.height}}</h4>
-        <h4>Weight: {{pokemon.weight}}</h4>
-        <h4>Default: {{pokemon.is_default}}</h4>
-        <h4>Base Experience: {{pokemon.base_experience}}</h4>
-        <h3>Types:</h3>
-        <h4>{{pokemon.types[0].type.name}}</h4>
-        <h4 *ngIf="pokemon.types[1]">{{pokemon.types[1].type.name}}</h4>
+    </div>
+</div>
+    </div>
+    <div class="bg-color"  *ngIf="pokemon">
+        <table class="table col-md-6 display-table ">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Height</th>
+                    <th scope="col">Weight</th>
+                    <th scope="col">Default</th>
+                    <th scope="col">Base Experience</th>
+                    <th scope="col">Types</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">{{pokemon.name}}</th>
+                    <td>{{pokemon.height}}</td>
+                    <td>{{pokemon.weight}}</td>
+                    <td>{{pokemon.is_default}}</td>
+                    <td>{{pokemon.base_experience}}</td>
+                    
+                    <td *ngIf = "pokemon.types[1]">{{pokemon.types[0].type.name}} , {{pokemon.types[1].type.name}} </td> 
+                    <td *ngIf = "!pokemon.types[1]"> {{pokemon.types[0].type.name}}</td>
+
+                  </tr>
+                  </tbody>
+                  </table>
+           </div>
+    </div>
         <table>
             <tr>
                 <td colspan ="2">
@@ -66,5 +91,3 @@
                 </td>
             </tr>
         </table>
-    </div>
-</div>
