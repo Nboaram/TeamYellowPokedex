@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { DataRequestService } from './data-request.service';
 import { Observable } from 'rxjs';
 import { PokemonInterface } from '../interfaces/pokemon-interface';
+import { send } from 'q';
 
 @Injectable({
   providedIn: 'root'

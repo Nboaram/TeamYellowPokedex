@@ -29,7 +29,9 @@ export class SearchComponent implements OnInit {
     console.log(pokemon);
     this.pokeService.getOnePokemon(pokemon).subscribe((x) =>{
       console.log(x);
-      this.pokemon = x;
+      if (x.name) {
+        this.pokemon = x;
+      }
       console.log(this.pokemon.types[0].type.name);
     });
   }
