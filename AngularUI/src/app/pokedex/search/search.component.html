@@ -1,16 +1,70 @@
 <div align="center">
     <form [formGroup]="searchForm">
         <input type="text" placeholder="Pokemon Name" formControlName="name">
-        <button (click) = "findPokemon();">search</button>
+        <button (click)="findPokemon();">search</button>
     </form>
-    <div *ngIf="pokemon"> 
+    <div *ngIf="pokemon">
         <h2>{{pokemon.name}}</h2>
         <h4>Height: {{pokemon.height}}</h4>
         <h4>Weight: {{pokemon.weight}}</h4>
         <h4>Default: {{pokemon.is_default}}</h4>
         <h4>Base Experience: {{pokemon.base_experience}}</h4>
-        <h3>Types</h3>
+        <h3>Types:</h3>
         <h4>{{pokemon.types[0].type.name}}</h4>
-        <h4>{{pokemon.types[1].type.name}}</h4>
+        <h4 *ngIf="pokemon.types[1]">{{pokemon.types[1].type.name}}</h4>
+        <table>
+            <tr>
+                <td colspan ="2">
+                <img src="{{pokemon.sprites.front_default}}" width="250" height="250">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 align="left">Speed: </h4>
+                </td>
+                <td>
+                <h4>{{pokemon.stats[0].base_stat}}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <h4>Special Defense: </h4>
+                </td>
+                <td>
+                <h4>{{pokemon.stats[1].base_stat}}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <h4>Special Attack: </h4>
+                </td>
+                <td>
+                <h4>{{pokemon.stats[2].base_stat}}</h4>
+                </td>
+            <tr>
+                <td>
+                <h4>Defense: </h4>
+                </td>
+                <td>
+                <h4> {{pokemon.stats[3].base_stat}}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <h4>Attack: </h4>
+                </td>
+                <td>
+                <h4>{{pokemon.stats[4].base_stat}}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <h4>Hit Points: </h4>
+                </td>
+                <td>
+                <h4> {{pokemon.stats[5].base_stat}}</h4>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
