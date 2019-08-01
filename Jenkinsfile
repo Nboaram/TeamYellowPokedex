@@ -52,7 +52,7 @@ pipeline {
             		sh 'docker run -d -p 80:80 "registry/ui:latest"${env.BUILD_NUMBER}"'
         		}
 			}
-			stage('Removing images') {
+			stage('Removing Images') {
   				steps {
             		sh "docker rmi $registry/frontend:latest$BUILD_NUMBER"
         		}
