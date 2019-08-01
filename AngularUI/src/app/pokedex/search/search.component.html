@@ -5,7 +5,8 @@
 
         <form [formGroup]="searchForm">
             <input type="text" placeholder="Pokemon Name" formControlName="name">
-            <button (click)="findPokemon();">search</button>
+            <button (click)="findPokemon();">Search</button>
+            <button (click)="findAllPokemon();">Show All</button>
         </form>
     </div>
 </div>
@@ -79,5 +80,8 @@
 
         </tr>
     </table>
+</div>
+<div *ngIf="allPokemon">
+    <app-pokemon-nameplate *ngFor="let poke of allPokemon.results" [poke]="poke"></app-pokemon-nameplate>
 </div>
 <html>
