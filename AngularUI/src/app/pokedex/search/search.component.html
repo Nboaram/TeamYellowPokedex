@@ -4,7 +4,8 @@
 
         <form [formGroup]="searchForm">
             <input type="text" placeholder="Pokemon Name" formControlName="name">
-            <button (click)="findPokemon();">search</button>
+            <button (click)="findPokemon();">Search</button>
+            <button (click)="findAllPokemon();">Show All</button>
         </form>
     </div>
 </div>
@@ -38,7 +39,7 @@
 <table *ngIf="pokemon">
     <tr>
         <td colspan="2" align="center">
-            <img src="{{pokemon.sprites.front_default}}" width="175" height="175" >
+            <img src="{{pokemon.sprites.front_default}}" width="175" height="175">
         </td>
     </tr>
     <tr>
@@ -89,3 +90,6 @@
         </td>
     </tr>
 </table>
+<div *ngIf="allPokemon">
+    <app-pokemon-nameplate *ngFor="let poke of allPokemon.results" [poke]="poke"></app-pokemon-nameplate>
+</div>
