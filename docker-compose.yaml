@@ -4,5 +4,5 @@ services:
         ui:
                 image: instance-2:5000/frontend
                 ports:
-                        - target: 4200
-                          published: 4200
+                        - target: 80
+                          published: 80
