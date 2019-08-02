@@ -29,7 +29,7 @@ stage('Clone repository') {
 stage('Build Image') {
     steps {
         script {
-           app = docker.build("frontend", "./AngularUI")
+           app = docker.build("frontend", "./AngularUI", "--no-cache", "--pull")
         }
   }
 }
