@@ -61,7 +61,6 @@ stage('Deploy Image') {
 stage('Removing images') {
   steps {
             sh "docker rmi frontend:latest"
-	    sh "yes | docker system prune"
         }
     }
 }
