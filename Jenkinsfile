@@ -55,7 +55,7 @@ stage('Push Image') {
 }
 stage('Deploy Image') {
   steps {
-            sh 'docker-compose up -d'
+            sh 'docker-compose up -d --build'
         }
 }
 stage('Removing images') {
