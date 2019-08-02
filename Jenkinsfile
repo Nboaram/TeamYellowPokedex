@@ -60,7 +60,7 @@ stage('Deploy Image') {
 }
 stage('Removing images') {
   steps {
-            sh "docker rmi frontend:latest instance-2:5000/frontend"
+            sh "docker rmi frontend:latest"
         }
     }
 }
