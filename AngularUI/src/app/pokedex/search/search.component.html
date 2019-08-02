@@ -1,0 +1,87 @@
+<html>
+<div align="center">
+    <div class="topHeader">
+        <p>View statistics and build you team!</p>
+
+        <form [formGroup]="searchForm">
+            <input type="text" placeholder="Pokemon Name" formControlName="name">
+            <button (click)="findPokemon();">Search</button>
+            <button (click)="findAllPokemon();">Show All</button>
+        </form>
+    </div>
+</div>
+<div class="card-measure card-bg" *ngIf="pokemon">
+    <table>
+        <tr>
+            <td>
+                <h4 align="left">{{pokemon.name}}</h4>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <img src="{{pokemon.sprites.front_default}}" width="175" height="150">
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <h4 align="left">Speed: </h4>
+            </td>
+            <td>
+                <h4>{{pokemon.stats[0].base_stat}}</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Special Defense: </h4>
+            </td>
+            <td>
+                <h4>{{pokemon.stats[1].base_stat}}</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Special Attack: </h4>
+            </td>
+            <td>
+                <h4>{{pokemon.stats[2].base_stat}}</h4>
+            </td>
+        <tr>
+            <td>
+                <h4>Defense: </h4>
+            </td>
+            <td>
+                <h4> {{pokemon.stats[3].base_stat}}</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Attack: </h4>
+            </td>
+            <td>
+                <h4>{{pokemon.stats[4].base_stat}}</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Hit Points: </h4>
+            </td>
+            <td>
+                <h4> {{pokemon.stats[5].base_stat}}</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Types: </h4>
+            </td>
+            <td *ngIf="pokemon.types[1]"><h4>{{pokemon.types[0].type.name}} , {{pokemon.types[1].type.name}} </h4> </td>
+            <td *ngIf="!pokemon.types[1]"><h4> {{pokemon.types[0].type.name}}</h4></td>
+
+        </tr>
+    </table>
+</div>
+<div *ngIf="allPokemon">
+    <app-pokemon-nameplate *ngFor="let poke of allPokemon.results" [poke]="poke"></app-pokemon-nameplate>
+</div>
+<html>
