@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+        ui:
+                image: instance-2:5000/frontend
+                ports:
+                        - target: 80
+                          published: 80
